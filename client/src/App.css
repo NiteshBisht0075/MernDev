@@ -82,7 +82,7 @@ body {
   color: #000;
   overflow-x: hidden;
   height: 100%;
-  background-image: linear-gradient(to right, #a12ac9, #548cc0);
+  /* background-image: linear-gradient(to right, #a12ac9, #548cc0); */
   background-color: #ff8045;
   background-repeat: no-repeat
 }
@@ -375,4 +375,5 @@ a:hover {
   }
   .fa-address{
     text-align: center;
+    line-height: 1.6;
   }

@@ -8,7 +8,7 @@ import About from "./components/About"
 import Contact from "./components/Contact"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
-// import Logout from "./components/Logout"
+import ViewUser from "./components/ViewUser"
 const App =  () =>{
   return (
     <>
@@ -17,21 +17,21 @@ const App =  () =>{
       <Route exact path="/">
          <Home/>
       </Route>
-      <Route path="/about">
+      <Route exact path="/about">
          <About/>
       </Route >
-      <Route path="/contact">
+      <Route exact path="/contact">
          <Contact/>
       </Route>    
-      <Route path="/signup">
+      <Route exact path="/signup">
          <Signup/>
       </Route>   
-      <Route path="/login">
+      <Route exact path="/login">
          <Login/>
       </Route>  
-      {/* <Route path="/logout">
-         <Logout/>
-      </Route>   */}
+      <Route exact path="/view/:id">
+         <ViewUser/>
+      </Route>  
       </Switch>
  
   

@@ -11,17 +11,15 @@ require('./database/conn')
 const controller = require('./controller/userController')
 
 router.post('/register',controller.register)
-router.post('/signin',controller.signin)
-router.get('/userList', controller.userList);
-router.delete('/userDelete/:id',controller.userDelete);
+router.post('/sign-in',controller.signin)
+router.get('/user-list', controller.userList);
+router.get('/user-list/:id', controller.userById);
+router.delete('/user-delete/:id',controller.userDelete);
+router.put('/user-update/:id',controller.userUpdate)
 // router.get('/logout', controller.logout)
 
 
 const port = 5000;
-
-// router.post('/data-add',controller.data)
-// module.exports = router.routes()
-
 app.use(koaBody({multipart:true}))
 app.use(router.routes())
 .use(router.allowedMethods());

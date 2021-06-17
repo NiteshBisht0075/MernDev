@@ -3,11 +3,10 @@ import {NavLink,useHistory} from 'react-router-dom'
 const Login =  () =>{
   const history=useHistory()
    const [email,setEmail] =useState('');
-   const [password,setPassword] =useState('');
-   
+   const [password,setPassword] =useState('');  
    const loginUser = async(e)=>{
      e.preventDefault();
-     const res =await fetch('/signin',{
+     const res =await fetch('/sign-in',{
        method:"POST",
        headers:{
          "Content-Type":"application/json"
@@ -54,7 +53,6 @@ const Login =  () =>{
                                   />
                                   </div>
                                 </form>
-                                {/* <div className="row justify-content-center my-2"> <a href="#"><small className="text-muted">Forgot Password?</small></a> </div> */}
                             </div>
                         </div>
                         <div className="bottom text-center mb-5">

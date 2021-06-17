@@ -72,13 +72,28 @@ module.exports = {
    async userList(ctx){
     try{
         var users = await User.find()
-        // console.log(users)
         ctx.body =users
-        // ctx.response.body=users
         console.log(users)
     }
     catch(error){
         ctx.throw(error)
+    }
+   },
+   
+   async userById(ctx){
+    try{
+        const _id = ctx.request.params.id;
+        const userData = await User.findById(_id);
+        // console.log(userData);
+        if(!userData){
+            return ctx.body;
+        }
+        else{
+            ctx.body={userData};
+        }
+    }
+    catch(error){
+        ctx.throw(error);
     }
    },
 
@@ -99,5 +114,16 @@ module.exports = {
         ctx.throw(error)
     }
    },
+
+   async userUpdate(ctx){
+    try{
+        var _id = ctx.request.params.id;
+        var updateUser = await User.findByIdAndUpdate(_id, ctx.request.body)
+        ctx.body={updateUser}
+    }
+    catch(error){
+        ctx.throw(error)
+    }
+   }
 
 }

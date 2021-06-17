@@ -1,11 +1,10 @@
 import React, { useEffect,useState} from 'react'
-// import {useHistory} from 'react-router-dom'
 import axios from 'axios';
 
 const About =  () =>{
   const [users , setUserdata] = useState([]);
   useEffect(()=>{
-    axios.get('/userList')
+    axios.get('/user-list')
     .then(res =>{
       console.log(res)
       setUserdata(res.data)
@@ -16,12 +15,9 @@ const About =  () =>{
   },[])
 
   const deleteUser =async(id)=>{
-    // console.log(_id)
     window.alert(id);
-    await axios.delete('/userDelete/',id);
-    window.alert(id);
+    await axios.delete(`/user-delete/${id}`);
   }
-
   return (
     <>
         <h1>About</h1>
@@ -47,12 +43,15 @@ const About =  () =>{
               <td>{user.name}</td>  
               <td>{user.email}</td>
               <td>
-                {/* <link className="btn btn-primary mr-14" ></link> */}
-                {/* <link className="btn btn-outline-primary mr-14"></link> */}
-                {/* <link className="btn btn-danger mr-14" }></link> */}
-                <i class="material-icons" onClick={()=>deleteUser(user._id)}>delete</i>
-                {/* <i className="fa fa-trash"></i> */}
-                {/* <i className="bi bi-trash" onClick={()=>deleteUser(user._id)}></i> */}
+                <button id="deletebtn" onClick={()=>{
+                  deleteUser(user._id)
+                }}> Delete
+                </button>
+                {/* <button id="viewbtn" onClick={"window.location.href='/'"}
+                > View
+                </button> */}
+                <a href={`/view/${user._id}`} className="w3-button w3-black">Link Button</a>
+                
               </td>
             </tr>
             ))

@@ -1,6 +1,5 @@
 import React,{useState} from 'react'
 import { useHistory } from 'react-router-dom';
-// import {NavLink} from "react"
 const Signup =  () =>{
   const history =useHistory()
   const [user,setUser] = useState({
@@ -30,10 +29,9 @@ const Signup =  () =>{
     }
     else{
       window.alert("registration successful")
-      history.push("/about")
+      history.push("/login")
     }
   }
-
   return (
     <div>
       <div className="signup-form">
@@ -73,7 +71,6 @@ const Signup =  () =>{
     </div>        
 
 		<div className="form-group">
-			{/* <button type="submit" className="btn btn-primary btn-block btn-lg" on>Sign Up</button> */}
       <input type="submit" className="btn btn-primary btn-block btn-lg" name="signup" required="required"
       value="register"
       onClick={PostData}
@@ -81,7 +78,6 @@ const Signup =  () =>{
 		</div>	
     </form>
 	<div className="text-center small">Already have an account? <a href="/login">Login here</a></div>
-  {/* <NavLink to="/login" >login</NavLink> */}
 </div>
     </div>
   )
