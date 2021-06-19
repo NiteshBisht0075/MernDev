@@ -9,6 +9,7 @@ import Contact from "./components/Contact"
 import Signup from "./components/Signup"
 import Login from "./components/Login"
 import ViewUser from "./components/ViewUser"
+import Logout from './components/Logout';
 const App =  () =>{
   return (
     <>
@@ -31,6 +32,9 @@ const App =  () =>{
       </Route>  
       <Route exact path="/view/:id">
          <ViewUser/>
+      </Route>
+      <Route exact path="/logout">
+         <Logout/>
       </Route>  
       </Switch>
  

@@ -17,6 +17,7 @@ const About =  () =>{
   const deleteUser =async(id)=>{
     window.alert(id);
     await axios.delete(`/user-delete/${id}`);
+    // About();
   }
   return (
     <>
@@ -50,7 +51,7 @@ const About =  () =>{
                 {/* <button id="viewbtn" onClick={"window.location.href='/'"}
                 > View
                 </button> */}
-                <a href={`/view/${user._id}`} className="w3-button w3-black">Link Button</a>
+                <a href={`/view/${user._id}`} className="w3-button w3-black">ViewUser</a>
                 
               </td>
             </tr>

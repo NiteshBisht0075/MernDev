@@ -78,11 +78,24 @@
 .logo{
   height: 80px;
 }
+.img-fluid{
+  display: block;  
+margin-left: auto;  
+margin-right: auto;  
+border: 3px ridge rgba(213, 151, 211, 0.33);  
+padding: 5px;  
+/* background-color: #8a96dc; */
+}
+.Homepara{
+  margin-top: 45px;
+  font-family: cursive;
+  background: none;
+}
 body {
   color: #000;
   overflow-x: hidden;
   height: 100%;
-  /* background-image: linear-gradient(to right, #a12ac9, #548cc0); */
+  background-image: linear-gradient(to right, #b022dc, #bababa);
   background-color: #ff8045;
   background-repeat: no-repeat
 }
@@ -242,12 +255,12 @@ a:hover {
   }
 }
 .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 100px;
+  padding: 5px;
+  font-size: 70px;
+  width: 105px;
   text-align: center;
   text-decoration: none;
-  margin: 40px 67px;
+  margin: 43px 134px;
 }
 
 .fa:hover {
@@ -376,4 +389,13 @@ a:hover {
   .fa-address{
     text-align: center;
     line-height: 1.6;
+    font-family: cursive;
+    font-size: 30px;
+    font-weight: bolder;
+  }
+  .container{
+    font-family: cursive;
+  }
+  .w3-button w3-black{
+    text-decoration:none;
   }
